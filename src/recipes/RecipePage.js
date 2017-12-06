@@ -10,7 +10,7 @@ export class RecipePage extends PureComponent {
   }
 
   componentWillMount() {
-    this.props.dispatch(fetchRecipes())
+    this.props.fetchRecipes()
   }
 
   render() {
@@ -39,4 +39,4 @@ const mapStateToProps = ({ recipes }, { match }) => {
   }
 }
 
-export default connect(mapStateToProps)(RecipePage)
+export default connect(mapStateToProps, { fetchRecipes })(RecipePage)
